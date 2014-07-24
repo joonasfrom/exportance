@@ -1,4 +1,3 @@
-exportance
-==========
+# Exportance
 
-A barebone Ghost CMS theme that is optimised for posts with large images.
+A really barebone theme for Ghost CMS. Optimised for blogs with lots of large images.
