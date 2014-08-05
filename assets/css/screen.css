@@ -2,7 +2,9 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans");
 @import url("http://fonts.googleapis.com/css?family=Arvo");
 
-/** Default styles for everything **/
+/**
+ * Default styles for everything
+ **/
 
 body {
 	font-family: "Open Sans", sans-serif;
@@ -12,7 +14,9 @@ body {
 	line-height: 1.5;
 }
 
-/** Basic styles **/
+/**
+ * Basic styles
+ **/
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Arvo", serif;
@@ -62,11 +66,11 @@ ol li { list-style-type: decimal; }
 
 a { text-decoration: none; }
 
-a:link { color: #0080FF; }
+a:link { color: inherit; }
 
-a:hover { color: #6CF; }
+a:visited { color: inherit; }
 
-a:visited { color: #800080; }
+a:hover { color: #4972B7; }
 
 img { max-width: 100%; }
 
@@ -80,12 +84,20 @@ pre {
 	padding: 1rem;
 }
 
+/* Pretty blockquote */
 blockquote {
 	font-size: 2rem;
 	padding: 1em;
 	background-color: #E7E7E7;
 	border-left: 10px solid #BEBEBE;
 	quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+	content: open-quote;
+	float: left;
+	font-size: 4rem;
+	margin-top: -1.5rem;
 }
 
 hr {
@@ -95,44 +107,51 @@ hr {
 	border-bottom: 1px solid #E7E7E7;
 }
 
-/** Body parts (tsihihi) **/
+/**
+ * Body parts (tsihihi)
+ **/
 
 body > header {
-	background-color: #E7E7E7;
+	background-color: #383838;
 	background-size: cover;
 	text-align: center;
-	padding: 100px 5%;
+	padding: 1rem 5%;
+	color: #F3F3F3;
 }
 
 body > main {
-	margin-left: auto;
-	margin-right: auto;
-	margin-bottom: 200px;
+	margin: 3rem auto 3rem auto;
 }
 
 body > footer {
-	background-color: #383838;
+	background-color: #808080;
 	padding: 5%;
 	color: #F0F0F0;
 }
 
-/** Special styles **/
+/**
+ * Special styles
+ **/
+
 body > header img {
 	max-width: 25%;
 }
 
 body > header a:link,
-body > header a:visited {
-	color: #383838;
+body > header a:visited,
+body > header a:hover,
+body > header a:visited:hover {
+	color: inherit;
 }
 
+/* Meta information of posts */
 .meta {
-	margin-bottom: 20px;
+	margin-bottom: 1rem;
 }
 
 .meta > * {
 	font-size: 1.5rem;
-	color: #BEBEBE;
+	color: #808080;
 	margin: 0;
 }
 
@@ -152,7 +171,48 @@ body > header a:visited {
 	content: "✎";
 }
 
-/** Responsive stuff **/
+/* Adding dots to a summary */
+.summary > *:last-child:after {
+	content: "...";
+}
+
+/* Pagination */
+.pagination {
+	position: relative;
+}
+
+.pagination .newer-posts {
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+.pagination .older-posts {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.pagination .page-number {
+	text-align: center;
+	display: block;
+	margin: 0 auto;
+	width: 100%;
+}
+
+/** Post links **/
+
+.content a:link,
+.content a:visited { color: #4972B7; }
+
+.content a:hover { text-decoration: underline; }
+
+/** Other links **/
+
+.post .read-more { color: #4972B7; }
+
+.post .read-more:hover { text-decoration: underline; }
+
+/** "Responsive" stuff **/
 
 @media only screen and (max-width: 900px) {
 	body > main {
@@ -169,12 +229,4 @@ body > header a:visited {
 
 /** Something completely different **/
 
-/* Ghost wants to put p tags inside blockquotes */
-blockquote p:last-child { margin: 0; }
-
-blockquote:before {
-	content: open-quote;
-	float: left;
-	font-size: 4rem;
-	margin-top: -1.5rem;
-}
+blockquote p:last-child { margin: 0; } /* Ghost wants to put p tags inside blockquotes. FYNE! */
