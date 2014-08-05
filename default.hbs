@@ -1,37 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    {{! Document Settings }}
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		{{! Document Settings }}
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-    {{! Page Meta }}
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
+		{{! Page Meta }}
+		<title>{{meta_title}}</title>
+		<meta name="description" content="{{meta_description}}" />
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="HandheldFriendly" content="True" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="shortcut icon" href="{{asset "favicon.ico"}}">
+		<link rel="shortcut icon" href="{{asset "favicon.ico"}}">
 
-    {{! Styles'n'Scripts }}
-    <link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" media="screen" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/print.css"}}" media="print" />
+		<link rel="stylesheet" type="text/css" href="{{asset "css/screen.css"}}" media="screen" />
+		<link rel="stylesheet" type="text/css" href="{{asset "css/print.css"}}" media="print" />
 
-    {{! Ghost outputs important style and meta data with this tag }}
-    {{ghost_head}}
+		{{ghost_head}}
 </head>
 <body>
+		{{! Everything else gets inserted here }}
+		
+		{{! The big featured header }}
+		{{#if @blog.cover}}
+		<header style="background-image: url({{@blog.cover}})">
+		{{else}}
+		<header>
+		{{/if}}
+		{{#if @blog.logo}}
+			<a href="{{@blog.url}}">
+				<img class="logo" src="{{@blog.logo}}" alt="Logo" title="{{@blog.title}}"/>
+			</a>
+			{{/if}}
+			<h2>
+				<a href="{{@blog.url}}">{{@blog.title}}</a>
+			</h2>
+			<p class>{{@blog.description}}</p>
+		</header>
+		{{{body}}}
 
-    {{! Everything else gets inserted here }}
-    {{{body}}}
-
-    <footer class="site-footer clearfix">
-         <section class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-         <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
-    </footer>
-
-    {{! Ghost outputs important scripts and data with this tag }}
-    {{ghost_foot}}
+		<footer class="site-footer clearfix">
+			<section class="copyright">
+				<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
+				<a class="subscribe" href="{{@blog.url}}/rss/">Subscribe</a>
+		</footer>
+		{{ghost_foot}}
 </body>
 </html>

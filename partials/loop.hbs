@@ -1,23 +1,18 @@
-{{! Previous/next page links - only displayed on page 2+ }}
-<div class="extra-pagination inner">
-    {{pagination}}
-</div>
-
 {{! This is the post loop - each post will be output using this markup }}
 {{#foreach posts}}
 <article class="{{post_class}}">
-    <header class="post-header">
-        <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-    </header>
-    <section class="post-excerpt">
-        <p>{{excerpt words="30"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
-    </section>
-    <footer class="post-meta">
-        {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
-        <a href="{{@blog.url}}/author/{{author.slug}}">{{author.name}}</a>
-        {{tags prefix=" on "}} 
-        <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time> 
-    </footer>
+	<header>
+		<h2><a href="{{url}}">{{{title}}}</a></h2>
+		<section class="post-meta">
+			<time datetime="{{date format='YYYY-MM-DD HH:mm:SS'}}">{{date format="YYYY-MM-DD HH:mm:SS"}}</time>
+			{{#if tags}}
+			<p class="tags">Tags: {{tags}}</p>
+			{{/if}}
+		</section>
+	</header>
+	<section class="excerpt">
+		<p>{{excerpt words="50"}}... <a class="read-more" href="{{url}}">more &raquo;</a></p>
+	</section>
 </article>
 {{/foreach}}
 
