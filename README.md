@@ -1,3 +1,14 @@
 # Exportance
 
-A really barebone theme for Ghost CMS. Optimised for blogs with lots of large images.
+A simple theme for Ghost CMS.
+
+## Features
+* Better image handling.
+* No JavaScript.
+* Simple and fast.
+* Includes a print stylesheet.
+* Somewhat responsive (two fluid layouts).
+
+## Screenshot
+
+![Exportance](assets/images/screenshot.png)
