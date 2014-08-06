@@ -1,0 +1,35 @@
+/**
+ * A really simple print CSS for printing individual posts.
+ * (C) Joonas From, 2014, http://www.tulikukka.com/
+ **/
+
+@import url("content.css");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans");
+@import url("http://fonts.googleapis.com/css?family=Arvo");
+
+body {
+	font-family: "Open Sans", sans-serif;
+	font-size: 1.25em;
+	line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: "Arvo", serif;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* Link URLs */
+a[href]:after {
+	content: " (" attr(href) ")";
+}
+
+/* Hide some elements */
+body > header,
+body > footer,
+body > main .tags {
+	display: none;
+}

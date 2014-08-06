@@ -20,9 +20,6 @@
 		{{ghost_head}}
 </head>
 <body>
-		{{! Everything else gets inserted here }}
-		
-		{{! The big featured header }}
 		{{#if @blog.cover}}
 		<header style="background-image: url({{@blog.cover}})">
 		{{else}}
@@ -39,11 +36,9 @@
 			<p class>{{@blog.description}}</p>
 		</header>
 		{{{body}}}
-
-		<footer class="site-footer clearfix">
-			<section class="copyright">
-				<a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</section>
-				<a class="subscribe" href="{{@blog.url}}/rss/">Subscribe</a>
+		<footer>
+				<p class="copyright"><a href="{{@blog.url}}">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</p>
+				<a class="subscribe" href="{{@blog.url}}/rss/">RSS</a>
 		</footer>
 		{{ghost_foot}}
 </body>

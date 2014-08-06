@@ -1,9 +1,15 @@
+/**
+ * Main screen CSS for Exportance theme.
+ * (C) Joonas From, 2014, http://www.tulikukka.com/
+ **/
+
 @import url("reset.css");
+@import url("content.css");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans");
 @import url("http://fonts.googleapis.com/css?family=Arvo");
 
 /**
- * Default styles for everything
+ * Basic styles. These are overrides and additions for content.css
  **/
 
 body {
@@ -14,95 +20,27 @@ body {
 	line-height: 1.5;
 }
 
-/**
- * Basic styles
- **/
-
 h1, h2, h3, h4, h5, h6 {
 	font-family: "Arvo", serif;
-	line-height: 1.25;
 }
-
-h1 {
-	font-size: 5rem;
-	letter-spacing: -5px;
-}
-
-h2 {
-	font-size: 3.5rem;
-}
-
-h3 {
-	font-size: 3rem;
-}
-
-h4 {
-	font-size: 2.5rem;
-}
-
-h5 {
-	font-size: 2rem;
-}
-
-h6 {
-	font-size: 1.5rem;
-}
-
-p, ul, ol, dl, blockquote, pre {
-	margin: 0 0 2rem 0;
-}
-
-em { font-style: italic; }
-
-strong { font-weight: bold; }
-
-li { margin-left: 2em; }
-
-ul li { list-style-type: disc; }
-
-li ul, li ol { margin: 0; } /* Nested lists */
-
-ol li { list-style-type: decimal; }
 
 a { text-decoration: none; }
 
-a:link { color: inherit; }
+a:link,
+a:visited { color: #4972B7; }
 
-a:visited { color: inherit; }
-
-a:hover { color: #4972B7; }
-
-img { max-width: 100%; }
+a:hover { text-decoration: underline; }
 
 pre, code {
 	background-color: #E7E7E7;
-	font-family: monospace;
-	font-size: 1.25rem;
 }
 
-pre {
-	padding: 1rem;
-}
-
-/* Pretty blockquote */
 blockquote {
-	font-size: 2rem;
-	padding: 1em;
 	background-color: #E7E7E7;
-	border-left: 10px solid #BEBEBE;
-	quotes: "\201C""\201D""\2018""\2019";
-}
-
-blockquote:before {
-	content: open-quote;
-	float: left;
-	font-size: 4rem;
-	margin-top: -1.5rem;
+	border-left: 0.5em solid #BEBEBE;
 }
 
 hr {
-	height: 0;
-	border: 0;
 	border-top: 1px solid #E7E7E7;
 	border-bottom: 1px solid #E7E7E7;
 }
@@ -115,7 +53,7 @@ body > header {
 	background-color: #383838;
 	background-size: cover;
 	text-align: center;
-	padding: 1rem 5%;
+	padding: 5rem 5%;
 	color: #F3F3F3;
 }
 
@@ -124,24 +62,36 @@ body > main {
 }
 
 body > footer {
-	background-color: #808080;
-	padding: 5%;
-	color: #F0F0F0;
+	background-color: #E1E1E1;
+	color: #383838;
+	padding: 1rem;
 }
 
 /**
  * Special styles
  **/
 
+/* Blog logo handling */
 body > header img {
 	max-width: 25%;
 }
 
+/* Link color overrides */
 body > header a:link,
 body > header a:visited,
 body > header a:hover,
-body > header a:visited:hover {
+body > footer a:link,
+body > footer a:visited,
+body > main h2 a:link,
+body > main h2 a:visited,
+body > main .tags a:link,
+body > main .tags a:visited {
 	color: inherit;
+}
+
+body > footer > * {
+	display: block;
+	margin: 0;
 }
 
 /* Meta information of posts */
@@ -199,13 +149,6 @@ body > header a:visited:hover {
 	width: 100%;
 }
 
-/** Post links **/
-
-.content a:link,
-.content a:visited { color: #4972B7; }
-
-.content a:hover { text-decoration: underline; }
-
 /** Other links **/
 
 .post .read-more { color: #4972B7; }
@@ -225,8 +168,16 @@ body > header a:visited:hover {
 	body > main {
 		max-width: 800px;
 	}
+	
+	body > footer > * {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 800px;
+	}
 }
 
-/** Something completely different **/
+/**
+ * Something completely different
+ **/
 
 blockquote p:last-child { margin: 0; } /* Ghost wants to put p tags inside blockquotes. FYNE! */

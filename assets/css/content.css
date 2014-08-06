@@ -1,0 +1,80 @@
+/**
+ * This CSS file is separately made for styling the actual markdown of the posts, mostly.
+ * The idea is to provide a working set of markdown styles that don't have any theme colors or fonts so it can be re-used.
+ * (C) Joonas From, 2014, http://www.tulikukka.com/
+ **/
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.25;
+}
+
+h1 {
+	font-size: 5rem;
+	letter-spacing: -5px;
+}
+
+h2 {
+	font-size: 3.5rem;
+}
+
+h3 {
+	font-size: 3rem;
+}
+
+h4 {
+	font-size: 2.5rem;
+}
+
+h5 {
+	font-size: 2rem;
+}
+
+h6 {
+	font-size: 1.5rem;
+}
+
+p, ul, ol, dl, blockquote, pre {
+	margin: 0 0 2rem 0;
+}
+
+em { font-style: italic; }
+
+strong { font-weight: bold; }
+
+li { margin-left: 2em; }
+
+ul li { list-style-type: disc; }
+
+li ul, li ol { margin: 0; } /* Nested lists */
+
+ol li { list-style-type: decimal; }
+
+img { max-width: 100%; }
+
+pre, code {
+	font-family: monospace;
+	font-size: 1.25rem;
+}
+
+pre {
+	padding: 1rem;
+}
+
+/* Pretty blockquote */
+blockquote {
+	font-size: 2rem;
+	padding: 1em;
+	quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+	content: open-quote;
+	float: left;
+	font-size: 4rem;
+	margin-top: -1.5rem;
+}
+
+hr {
+	height: 0;
+	border: 0;
+}

@@ -1,16 +1,14 @@
 {{!< default}}
 
-{{! The comment above "< default" means - insert everything in this file into
-		the {body} of the default.hbs template, which contains our header/footer. }}
-
 <main>
 	<article class="{{post_class}}">
-	{{! Everything inside the #post tags pulls data from the post }}
 	{{#post}}
 	<header>
 		<h1>{{{title}}}</h1>
 		<section class="meta">
-			<p class="date"><time datetime="{{date format='YYYY-MM-DD HH:mm:SS'}}">{{date format="YYYY-MM-DD HH:mm:SS"}}</time></p>
+			<p class="date">
+				<time datetime="{{date format='YYYY-MM-DD HH:mm:ss'}}">{{date format="YYYY-MM-DD HH:mm:ss"}}</time>
+			</p>
 			{{#if tags}}
 			<p class="tags">{{tags}}</p>
 			{{/if}}
@@ -18,8 +16,7 @@
 			<p class="author">{{author}}</p>
 			{{/if}}
 		</section>
-	</section>
-
+	</header>
 	<section class="content">
 		{{content}}
 	</section>
