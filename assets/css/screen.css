@@ -12,6 +12,10 @@
  * Basic styles. These are overrides and additions for content.css
  **/
 
+html {
+	background-color: #E1E1E1; /* This fixes the footer from "rising" */
+}
+
 body {
 	font-family: "Open Sans", sans-serif;
 	font-size: 1.25em;
@@ -53,7 +57,7 @@ body > header {
 	background-color: #383838;
 	background-size: cover;
 	text-align: center;
-	padding: 5rem 5%;
+	padding: 3rem 5%;
 	color: #F3F3F3;
 }
 
@@ -74,6 +78,11 @@ body > footer {
 /* Blog logo handling */
 body > header img {
 	max-width: 25%;
+}
+
+/* Remove margins from header elements */
+body > header > * {
+	margin: 0;
 }
 
 /* Link color overrides */
