@@ -85,15 +85,18 @@ body > footer a:visited,
 body > main h2 a:link,
 body > main h2 a:visited,
 body > main .tags a:link,
-body > main .tags a:visited {
+body > main .tags a:visited,
+body > main .author a:link,
+body > main .author a:visited {
 	color: inherit;
 }
 
 body > footer a:hover,
 body > main h2 a:hover,
-body > main .tags a:hover {
+body > main .tags a:hover,
+body > main .author a:hover {
 	color: #4972B7;
-	text-decoration: none;
+	text-decoration: underline;
 }
 
 body > footer > * {
