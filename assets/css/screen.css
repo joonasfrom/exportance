@@ -5,8 +5,7 @@
 
 @import url("reset.css");
 @import url("content.css");
-@import url("http://fonts.googleapis.com/css?family=Open+Sans");
-@import url("http://fonts.googleapis.com/css?family=Arvo");
+@import url("http://fonts.googleapis.com/css?family=Lato:400,300,700,900");
 
 /**
  * Basic styles. These are overrides and additions for content.css
@@ -17,15 +16,17 @@ html {
 }
 
 body {
-	font-family: "Open Sans", sans-serif;
+	font-family: "Lato", "Helvetica Neue", sans-serif;
 	font-size: 1.25em;
+	font-weight: 300;
 	background-color: #FBFBFB;
 	color: #383838;
 	line-height: 1.5;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: "Arvo", serif;
+	font-family: "Lato", "Helvetica Neue", sans-serif;
+	font-weight: 900;
 }
 
 a { text-decoration: none; }
