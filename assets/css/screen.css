@@ -139,6 +139,7 @@ body > footer > * {
 
 .meta .author:before {
 	content: "✎";
+	letter-spacing: -5px; /* This symbol is wider than the others */
 }
 
 /* Adding dots to a summary */
